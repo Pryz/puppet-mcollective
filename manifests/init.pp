@@ -70,6 +70,7 @@ class mcollective ( $nocnode = 'noc' ) {
         group        => 'root',
         mode         => '0640',
         content      => template('mcollective/serverprod.cfg'),
+        notify       => Service['mcollective'],
         #source      => $hostname ? {
         #    'el4'   => 'puppet:///modules/mcollective/serverqa.cfg',
         #    default => 'puppet:///modules/mcollective/serverprod.cfg',
